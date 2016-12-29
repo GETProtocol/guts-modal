@@ -15,6 +15,8 @@ export default Ember.Service.extend({
 
   hide() {
     this.set("isVisible", false);
+    this.set('component', null);
+    this.set('model', null);
   },
 
   success() {
