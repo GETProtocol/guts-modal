@@ -45,3 +45,12 @@ test("it has a promise that results in failure", function(assert) {
     service.failure();
   });
 });
+
+test("it clears the component when hidden", function(assert) {
+  assert.expect(2);
+  let service = this.subject();
+  service.show("some-component", {some:"data"});
+  assert.equal(service.get("component"), "some-component");
+  service.hide();
+  assert.equal(service.get("component"), null);
+});
